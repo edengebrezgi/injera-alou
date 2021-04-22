@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Injera Alou</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="page-header ">
+      <% if (user.local.email) { %>
+      <h2>Welcome
+        <%= user.local.email.slice(0,user.local.email.indexOf("@")) %>
+        where would you like to eat?
+      </h2>
+
+
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6" style="display: none;">
+        <div class="well">
+          <h3><span class="fa fa-user"></span> Local</h3>
+
+          <% if (user.local.email) { %>
+          <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <%= user.local.email %><br>
+            <strong>password</strong>: <%= user.local.password %>
+          </p>
+
+          <a href="/unlink/local" class="btn btn-default">Unlink</a>
+          <% } else { %>
+          <a href="/connect/local" class="btn btn-default">Connect Local</a>
+          <% } %>
+
+        </div>
+      </div>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top"
+            src="https://previews.123rf.com/images/alexis84/alexis841901/alexis84190100138/115253275-fresh-fruits-and-vegetables-from-ethiopia.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="" style="text-decoration: none;" class=""> Ethiopia</a>
+
+            </h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="https://thumbs.dreamstime.com/b/fresh-fruits-vegetables-japan-147138161.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Japan</h5>
+
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top"
+            src="https://media.istockphoto.com/photos/fresh-fruits-and-vegetables-from-mexico-picture-id1125591423"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Mexico</h5>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <h3>Messages</h3>
+
+        <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+          <li class="message">
+            <span><%= messages[i].name %></span>
+            <span><%= messages[i].msg %></span>
+            <span class="hide"><%= messages[i].thumbUp %></span>
+            <span class="hide"><%= messages[i].thumbDown %></span>
+            <span><%= (messages[i].thumbUp - messages[i].thumbDown)%></span>
+            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+            <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+          <% } %>
+        </ul>
+
+        <h2>Add a message</h2>
+        <% if (user.local.email) { %>
+        <form action="/messages" method="POST">
+          <input type="text" value="<%= user.local.email %>" name="name">
+          <input type="text" placeholder="message" name="msg">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <% } %>
+
+
+
+    </div>
+
+    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+    <% } else { %>
+    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+    <% } %>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

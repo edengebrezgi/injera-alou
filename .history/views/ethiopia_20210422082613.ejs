@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Injera Alou</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="page-header ">
+      <% if (user.local.email) { %>
+      <h2>
+          Ethiopia
+      </h2>
+
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <div class="input-group-append">
+          <span class="input-group-text">search</span>
+        </div>
+
+    </div>
+
+
+    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+    <% } else { %>
+    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+    <% } %>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </div>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
