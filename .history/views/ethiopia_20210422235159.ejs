@@ -26,34 +26,26 @@
         </div>
       </div>
 
-
-    
-      <div class="card-deck">
+   
         <% for(var i=0; i < ethiopia.length; i++) { %>
-        <div class="card">
-          <img class="card-img-top" src=<%=ethiopia[i].img%> alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= ethiopia[i].foodItem %></h5>
-            <p style="display: none;"><%= ethiopia[i].price %></p>
-            <p class="card-text"><%= ethiopia[i].ingredients %></p>
-            <p class="card-text">$<%= ethiopia[i].price %>.00</p>
-            <button type="button" class="btn btn-light add">Add to bag</button>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </div>
-        </div>
         <% } %>
-      </div>
+  
+
+      <a href="/payment" class="btn btn-default"></span>Pay</a>
+
+      <a href="/unlink/local" class="btn btn-default">Unlink</a>
      
-
-
-        <a href="/payment" class="btn btn-default"></span>Pay</a>
-
-        <a href="/unlink/local" class="btn btn-default">Unlink</a>
-
-        <a href="/connect/local" class="btn btn-default">Connect Local</a>
-
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </div>
-      <script src="/main.js"></script>
+      <a href="/connect/local" class="btn btn-default">Connect Local</a>
+    
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <script src="main.js"></script>
 
 </body>
 

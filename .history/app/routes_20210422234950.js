@@ -54,7 +54,6 @@ module.exports = function(app, passport, db) {
         })
     });
 
-    // MAKE ONE FOR EACH COUNTRY
     app.get('/ethiopia', isLoggedIn, function(req, res) {
       db.collection('ethiopia').find().toArray((err, result) => {
         if (err) return console.log(err)

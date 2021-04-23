@@ -69,13 +69,9 @@ Array.from(trash).forEach(function(element) {
       });
 });
 
-let amount  = 0;
 
 Array.from(add).forEach(function(element) {
   element.addEventListener('click', function(e){
-    console.log( this.parentNode.parentNode.childNodes[3].childNodes[3].innerText)
-    amount += +this.parentNode.parentNode.childNodes[3].childNodes[3].innerText
-    console.log('amount',amount)
-
+    console.log( this.parentNode.parentNode.childNodes[2].innerText)
   });
 });

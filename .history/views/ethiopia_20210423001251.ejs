@@ -34,10 +34,9 @@
           <img class="card-img-top" src=<%=ethiopia[i].img%> alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= ethiopia[i].foodItem %></h5>
-            <p style="display: none;"><%= ethiopia[i].price %></p>
             <p class="card-text"><%= ethiopia[i].ingredients %></p>
             <p class="card-text">$<%= ethiopia[i].price %>.00</p>
-            <button type="button" class="btn btn-light add">Add to bag</button>
+            <button type="button" class="btn btn-light">Add to bag</button>
           </div>
         </div>
         <% } %>
@@ -53,7 +52,7 @@
 
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
       </div>
-      <script src="/main.js"></script>
+      <script src="main.js"></script>
 
 </body>
 

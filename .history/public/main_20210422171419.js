@@ -2,8 +2,6 @@ var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var trash = document.getElementsByClassName("fa-trash");
 var thumbDown = document.getElementsByClassName("fa-thumbs-down");
 
-const add = document.querySelectorAll(".add");
-
 Array.from(thumbUp).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
@@ -67,15 +65,4 @@ Array.from(trash).forEach(function(element) {
           window.location.reload()
         })
       });
-});
-
-let amount  = 0;
-
-Array.from(add).forEach(function(element) {
-  element.addEventListener('click', function(e){
-    console.log( this.parentNode.parentNode.childNodes[3].childNodes[3].innerText)
-    amount += +this.parentNode.parentNode.childNodes[3].childNodes[3].innerText
-    console.log('amount',amount)
-
-  });
 });

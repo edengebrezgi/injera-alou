@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Injera Alou</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+
+<body>
+
+  <table>
+<% for(var i=0; i < test.length; i++) { %>
+   <tr>
+     <td>Price<%= test[i].foodItem %></td>
+     <img src=<%=test[i].img%> alt="">
+     <td>Price<%= test[i].ingredients %></td>
+   </tr>
+<% } %>
+</table>
+
+
+<a href="/profile">Go back to profile</a>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

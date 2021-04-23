@@ -15,6 +15,7 @@
   <div class="container">
 
     <div class="page-header ">
+      <% if (user.local.email) { %>
       <h2>
         Ethiopia
       </h2>
@@ -26,34 +27,28 @@
         </div>
       </div>
 
-
-    
-      <div class="card-deck">
-        <% for(var i=0; i < ethiopia.length; i++) { %>
+      <div class="card-group">
+        <% for(var i=0; i < test.length; i++) { %>
         <div class="card">
-          <img class="card-img-top" src=<%=ethiopia[i].img%> alt="Card image cap">
+          <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><%= ethiopia[i].foodItem %></h5>
-            <p style="display: none;"><%= ethiopia[i].price %></p>
-            <p class="card-text"><%= ethiopia[i].ingredients %></p>
-            <p class="card-text">$<%= ethiopia[i].price %>.00</p>
-            <button type="button" class="btn btn-light add">Add to bag</button>
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
         <% } %>
-      </div>
-     
+      </div> 
 
+      <a href="/payment" class="btn btn-default"></span>Pay</a>
 
-        <a href="/payment" class="btn btn-default"></span>Pay</a>
-
-        <a href="/unlink/local" class="btn btn-default">Unlink</a>
-
-        <a href="/connect/local" class="btn btn-default">Connect Local</a>
-
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </div>
-      <script src="/main.js"></script>
+      <a href="/unlink/local" class="btn btn-default">Unlink</a>
+      <% } else { %>
+      <a href="/connect/local" class="btn btn-default">Connect Local</a>
+      <% } %>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <script src="main.js"></script>
 
 </body>
 
